@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Thundercats-2021-App",
-    "slug": "Thundercats-2021-App",
+    "name": "install",
+    "slug": "install",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
