@@ -1,8 +1,8 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import { VStack, Input, Slider, NativeBaseProvider, Heading } from 'native-base';
+import { VStack, Input, Slider, NativeBaseProvider, Heading, Box } from 'native-base';
 import db from '../config'
 
 export default class BookingScreen extends React.Component {
@@ -10,7 +10,6 @@ export default class BookingScreen extends React.Component {
     super();
     this.state = {
       locations: [],
-      item: this.props.route.params.item,
     }
   }
 
@@ -43,8 +42,21 @@ export default class BookingScreen extends React.Component {
         <StatusBar style="auto" />
         <VStack safeArea paddingLeft={5}>
           <Heading>Book A Room</Heading>
-          <Heading size='sm'>at {item} truck stop</Heading>
-          <Slider />
+          <Heading size='sm'>at this truck stop</Heading>
+          <Box width='80%'>
+            <Slider
+              minimumValue={0}
+              maximumValue={150}
+              step={10}
+            >
+              <Slider.Track>
+                <Slider.FilledTrack />
+              </Slider.Track>
+              <Slider.Thumb />
+            </Slider>
+          </Box>
+          <Heading>Booking Details</Heading>
+          <Input placeholder='Name' />
         </VStack>
       </NativeBaseProvider>
     )}

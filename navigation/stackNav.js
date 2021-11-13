@@ -14,7 +14,7 @@ export default class StackNav extends React.Component {
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Map">
                     <Stack.Screen name="Map" component={Map} options={{headerShown: true}}/>
-                    <Stack.Screen name="Booking" component={Booking} options={{headerShown: false}}/>
+                    <Stack.Screen name="Booking" component={Booking} options={{headerShown: false}} initialParams={{item: []}} />
                 </Stack.Navigator>
             </NavigationContainer>
         )
