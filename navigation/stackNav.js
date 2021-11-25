@@ -13,8 +13,8 @@ export default class StackNav extends React.Component {
         return(
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Map">
-                    <Stack.Screen name="Map" component={Map} options={{headerShown: true}}/>
-                    <Stack.Screen name="Booking" component={Booking} options={{headerShown: false}} initialParams={{item: []}} />
+                    <Stack.Screen name="Map" component={Map} options={{headerShown: true, headerTitle:'TruckHub Locations'}}/>
+                    <Stack.Screen name="Booking" component={Booking} options={{headerShown: false, gestureEnabled: false}} initialParams={{item: []}} />
                 </Stack.Navigator>
             </NavigationContainer>
         )

@@ -2,7 +2,9 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import { VStack, Input, Slider, NativeBaseProvider, Heading, Box } from 'native-base';
+import { VStack, Input, NativeBaseProvider, Heading, Box, Button } from 'native-base';
+import {Slider} from '@miblanchard/react-native-slider'
+import DateTimePicker from '@react-native-community/datetimepicker';
 import db from '../config'
 
 export default class BookingScreen extends React.Component {
@@ -10,6 +12,7 @@ export default class BookingScreen extends React.Component {
     super();
     this.state = {
       locations: [],
+      time: new Date(1637390311000),
     }
   }
 
@@ -40,23 +43,27 @@ export default class BookingScreen extends React.Component {
     return (
       <NativeBaseProvider>
         <StatusBar style="auto" />
-        <VStack safeArea paddingLeft={5}>
-          <Heading>Book A Room</Heading>
-          <Heading size='sm'>at this truck stop</Heading>
-          <Box width='80%'>
+        <VStack safeArea>
+          <Heading alignSelf='center'>Book A Spot</Heading>
+          <Heading size='sm' alignSelf='center'>San Francisco TruckHub</Heading>
+          <Input placeholder='Name' marginX='10%' marginTop='5%'/>
+          <Box width='80%' paddingTop='10%' alignSelf='center'>
+            <Heading alignSelf='center' size='sm'>Time: 5 Hours</Heading>
             <Slider
-              minimumValue={0}
-              maximumValue={150}
-              step={10}
-            >
-              <Slider.Track>
-                <Slider.FilledTrack />
-              </Slider.Track>
-              <Slider.Thumb />
-            </Slider>
+            maximumValue={13}
+            minimumValue={1}
+            value={5}
+            step={1}
+            />
           </Box>
-          <Heading>Booking Details</Heading>
-          <Input placeholder='Name' />
+          <Box paddingRight='34%' width='100%' paddingTop='5%'>
+            <DateTimePicker 
+            style={{width :'100%', alignSelf: 'center'}}
+            value={this.state.time}/>
+          </Box>
+          <Button marginX='10%' height='15%' marginTop='10%'>
+            <Text style={{fontSize:20}}>Book Now!</Text>
+          </Button>
         </VStack>
       </NativeBaseProvider>
     )}

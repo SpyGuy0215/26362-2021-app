@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@miblanchard/react-native-slider": "^2.0.2",
     "@react-native-firebase/app": "^12.9.3",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
@@ -22,8 +23,9 @@
     "react-native-responsive-fontsize": "^0.5.1",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.8.0",
+    "react-native-svg": "12.1.1",
     "react-native-web": "^0.17.1",
-    "react-native-svg": "12.1.1"
+    "@react-native-community/datetimepicker": "3.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
